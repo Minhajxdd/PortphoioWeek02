@@ -38,6 +38,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 $("#submit-form").submit((e)=>{
     e.preventDefault()
+    if(errorValidate()){
     $.ajax({
         url:"https://script.google.com/macros/s/AKfycbx3b_72jUeOi-KrcIpIZDsAHS5y-BLTMIcFAJ5ii633aY2rQKyNRxuG1bcyqoXWrGBAqg/exec",
         data:$("#submit-form").serialize(),
@@ -52,4 +53,33 @@ $("#submit-form").submit((e)=>{
 
         }
     })
+    }
 })
+
+//Funciton for form validation Purpose
+
+function errorValidate(){
+    const name =  document.getElementById('Formname').value;
+    let name_error = document.getElementById('name_error');
+    const email = document.getElementById('Formemail').value;
+    let mail_error = document.getElementById('mail_error');
+    const emailValidate = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+ 
+ 
+    if(name === "" || name == null){
+         name_error.innerHTML = "Please enter a valid name";
+         return false;
+     }else{
+         name_error.innerHTML = "";
+     }
+ 
+     if(!email.match(emailValidate)){
+         mail_error.innerHTML = "Please Enter a valid email";
+         return false;
+     }else{
+         mail_error.innerHTML = "";
+     }
+ 
+     return true;
+ 
+ }

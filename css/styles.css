@@ -11021,3 +11021,11 @@ body::before {
   .project-section{
     border-color: 10px solid red;
   }
+
+  /* Contact me section */
+
+  #submit-form span{
+    background-color: rgb(255,0,0,0.5);
+    color: #ffff;
+    border-radius: 5px;
+  }
