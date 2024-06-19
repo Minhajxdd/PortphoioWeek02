@@ -12,8 +12,10 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -236,8 +238,26 @@
 
             <!-- Contact me -->
             <hr class="m-0">
-            <section class="contact-me-section resume-section" id="contact">
-
+            <section class="contact-me-section resume-section d-flex justify-content-center" id="contact">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Contact Me</h2>
+                <form id="submit-form" action="">
+                    <div class="mb-3">
+                        <label for="name" class="form-label fw-bolder fs-3">Name :</label>
+                        <input type="text" class="form-control input-lg" id="name" name="Name">
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label fw-bolder fs-3">Email : </label>
+                      <input type="email" class="form-control input-lg " id="email" name="Email">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label fw-bolder fs-3">Message : </label>
+                        <textarea class="form-control" name="Message" id="exampleFormControlTextarea1" rows="5" placeholder="Enter any message's...."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-dark px-4">Submit</button>
+                  </form>
+                  </div>
             </section>
         </div>
         <!-- Bootstrap core JS-->

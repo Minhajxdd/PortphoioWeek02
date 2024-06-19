@@ -32,3 +32,24 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+// Js code to sent the form to the excel and mail
+
+$("#submit-form").submit((e)=>{
+    e.preventDefault()
+    $.ajax({
+        url:"https://script.google.com/macros/s/AKfycbx3b_72jUeOi-KrcIpIZDsAHS5y-BLTMIcFAJ5ii633aY2rQKyNRxuG1bcyqoXWrGBAqg/exec",
+        data:$("#submit-form").serialize(),
+        method:"post",
+        success:function (response){
+            alert("Form submitted successfully")
+            window.location.reload()
+            //window.location.href="https://google.com"
+        },
+        error:function (err){
+            alert("Something failed")
+
+        }
+    })
+})
