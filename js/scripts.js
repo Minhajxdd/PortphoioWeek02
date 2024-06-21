@@ -64,12 +64,16 @@ function errorValidate(){
     const email = document.getElementById('Formemail').value;
     let mail_error = document.getElementById('mail_error');
     const emailValidate = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const numSymValidate = /[0123456789!@#$%^&*()]/;
  
  
     if(name === "" || name == null){
          name_error.innerHTML = "Please enter a valid name";
          return false;
-     }else{
+     }else if(name.match(numSymValidate)){
+        name_error.innerHTML = "Name Should't include Number or Symbol!!";
+        return false;
+    }else{
          name_error.innerHTML = "";
      }
  
