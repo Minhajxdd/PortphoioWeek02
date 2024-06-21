@@ -73,6 +73,9 @@ function errorValidate(){
      }else if(name.match(numSymValidate)){
         name_error.innerHTML = "Name Should't include Number or Symbol!!";
         return false;
+    }else if(name.length < 5){
+        name_error.innerHTML = "Name should have at lease 4 character"
+        return false;
     }else{
          name_error.innerHTML = "";
      }
